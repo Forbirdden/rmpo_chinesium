@@ -13,6 +13,9 @@ hero:
 > [!CAUTION]
 > И ДАЖЕ ЕСЛИ ПОНИМАЕТЕ ТО ВСЁ РАВНО НЕ СЛЕДУЙТЕ
 
+> [!TIP]
+> Режимы Fastboot (bootloader) и FastbootD (fastboot) - не одно и то же!
+
 # Обязательные утилиты:
 ADB и Fastboot
 
