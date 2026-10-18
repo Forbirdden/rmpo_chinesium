@@ -3,16 +3,17 @@ title: TECNO POVA 6 Neo
 category: Устройства
 order: 10
 icon: smartphone
-badge: MediaTek Helio G99 Ultimate (MT6789)
-description: Довольно популярный 7к мах кирпич от Transsion
+description: Довольно популярный 7к мах кирпич от Transsion, MediaTek Helio G99 Ultimate (MT6789)
 ---
 
 # Стоковая прошивка
 ## LI6-15.1.2.155 (OP001PF001AZ)
 Спасибо aimrite2
+
 <a href="https://drive.google.com/file/d/1wKcVk1iP6PpE8TgpKIujFTfy4JTMXvHX/view" target="_blank" rel="noopener">
   <md-button variant="outlined">Google Drive</md-button>
 </a>
+
 ### Отдельные файлы из этой версии
 <a href="https://files.catbox.moe/u4mwdw.img" target="_blank" rel="noopener">
   <md-button variant="outlined">boot</md-button>
@@ -25,7 +26,7 @@ description: Довольно популярный 7к мах кирпич от 
 Лично я разблокировл официально, mtkclient не тестировал
 - Включите отладку по USB и заводскую разблокировку в настройках разработчика
 - При подключении к ПК разрешите отладку
-- Перезагрузка в Fastboot
+- Перезагрузка в ***Fastboot***
 ```bash
 adb reboot bootloader
 ```
@@ -41,37 +42,31 @@ fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 # APatch
 Root права
 
-Подразумевая что вы только что отключили dm-verity перезагрузитесь в FastbootD
-```bash
-fastboot reboot fastboot
-```
-
-- Прошейте патченный boot.img
-Можно пропатчить самостоятельно, загрузив boot.img из прошивки в приложение APatch
-А можно прошить мой:
-
+- Прошивка патченного boot.img
 <a href="https://files.catbox.moe/vrbg0r.img" target="_blank" rel="noopener">
-  <md-button variant="outlined">boot.img с APatch</md-button>
+  <md-button variant="outlined">Пропатченный мной boot</md-button>
 </a>
 
+Пропатчить самостоятельно можно в приложении APatch
+
+Прошивка в ***FastbootD***
 ```bash
 fastboot flash boot vrbg0r.img
 ```
 
-# LineageOS GSI 23.2 с патчами TrebleDroid
-Спасибо MisterZtr за [LineageOS GSI](https://github.com/MisterZtr/LineageOS_gsi)
-Тестировал только одну версию:
-## 2026.05.24 Vanilla EROFS
+# LineageOS GSI с патчами TrebleDroid
+Спасибо MisterZtr
+
+Я тестировал только одну версию:
+
+## 23.2 2026.05.24 Vanilla EROFS
 Без Google сервисов, система только для чтения
 
-- Скачайте архив с прошивкой
 <a href="https://sourceforge.net/projects/misterztr-gsi/files/LineageOS/Android%2016/LineageOS-23.2-20260524-VANILLA-EROFS-GSI.7z/download" target="_blank" rel="noopener">
   <md-button variant="outlined">LineageOS-23.2-20260524-VANILLA-EROFS-GSI.7z</md-button>
 </a>
 
-- Распакуйте .img образ
-
-- В FastbootD освободите место под прошивку
+- Освобождение места под прошивку в ***FastbootD***
 ```bash
 fastboot erase product
 ```
@@ -79,7 +74,19 @@ fastboot erase product
 fastboot resize-logical-partition product 0x0
 ```
 
-- Прошейте LineageOS GSI 23.2
+- Прошивка
 ```bash
 fastboot flash system "LineageOS-23.2-20260524-VANILLA-EROFS-GSI.img"
+```
+
+# PitchBlack Recovery Project
+Прошивается в раздел vendor_boot
+
+<a href="https://github.com/PitchBlackRecoveryProject/android_device_TECNO_LI6-pbrp/releases/latest" target="_blank" rel="noopener">
+  <md-button variant="outlined">GitHub</md-button>
+</a>
+
+- Прошивка в ***Fastboot***
+```bash
+fastboot flash vendor_boot vendor_boot.img 
 ```
