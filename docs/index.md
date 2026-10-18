@@ -1,6 +1,6 @@
 ---
 title: Root My Piece Of Chinesium
-category: Главное
+category: Главная
 order: 0
 icon: home
 hero:
