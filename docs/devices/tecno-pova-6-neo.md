@@ -8,18 +8,16 @@ description: Довольно популярный 7к мах кирпич от 
 
 # Стоковая прошивка
 ## LI6-15.1.2.155 (OP001PF001AZ)
-Спасибо aimrite2
-
-<a href="https://drive.google.com/file/d/1wKcVk1iP6PpE8TgpKIujFTfy4JTMXvHX/view" target="_blank" rel="noopener">
-  <md-button variant="outlined">Google Drive</md-button>
+<a href="https://archive.org/download/hios-li6-15.1.2.155-op001pf001az/Tecno-Pova-6-Neo-Li6-15.rar" target="_blank" rel="noopener">
+  <md-button variant="outlined">Скачать</md-button>
 </a>
 
 ### Отдельные файлы из этой версии
-<a href="https://files.catbox.moe/u4mwdw.img" target="_blank" rel="noopener">
-  <md-button variant="outlined">boot</md-button>
+<a href="https://archive.org/download/20261106_20261106_1833/boot.img" target="_blank" rel="noopener">
+  <md-button variant="outlined">Скачать boot.img</md-button>
 </a>
-<a href="https://files.catbox.moe/mpa7vx.img" target="_blank" rel="noopener">
-  <md-button variant="outlined">vbmeta</md-button>
+<a href="https://archive.org/download/20261106_20261106_1833/vbmeta.img" target="_blank" rel="noopener">
+  <md-button variant="outlined">Скачать vbmeta.img</md-button>
 </a>
 
 # Разблокировка загрузчика официально
@@ -34,30 +32,30 @@ adb reboot bootloader
 ```bash
 fastboot flashing unlock
 ```
-- Отключение dm-verity (нужен vbmeta из прошивки)
+- Отключение dm-verity
 ```bash
 fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 ```
 
 # APatch
-Root права
+Root права на уровне ядра с простой установкой
 
 - Прошивка патченного boot.img
-<a href="https://files.catbox.moe/vrbg0r.img" target="_blank" rel="noopener">
-  <md-button variant="outlined">Пропатченный мной boot</md-button>
+<a href="https://archive.org/download/20261106_20261106_1833/apatch_li6.img" target="_blank" rel="noopener">
+  <md-button variant="outlined">Скачать пропатченный мной boot</md-button>
 </a>
 
 Пропатчить самостоятельно можно в приложении APatch
 
 Прошивка в ***FastbootD***
 ```bash
-fastboot flash boot vrbg0r.img
+fastboot flash boot apatch_li6.img
 ```
 
 # LineageOS GSI с патчами TrebleDroid
-Спасибо MisterZtr
+LineageOS с с популярными патчами "TrebleDroid" под различное железо
 
-Я тестировал только одну версию:
+Сделано MisterZtr
 
 ## 23.2 2026.05.24 Vanilla EROFS
 Без Google сервисов, система только для чтения
@@ -74,7 +72,7 @@ fastboot erase product
 fastboot resize-logical-partition product 0x0
 ```
 
-- Прошивка
+- Прошивка в ***FastbootD*** распакованного из архива образа
 ```bash
 fastboot flash system "LineageOS-23.2-20260524-VANILLA-EROFS-GSI.img"
 ```
