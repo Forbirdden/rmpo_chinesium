@@ -37,3 +37,12 @@ ADB и Fastboot
 <a href="https://github.com/bkerler/edl" target="_blank" rel="noopener">
   <md-button variant="outlined">edlclient (Qualcomm)</md-button>
 </a>
+
+# Специфические утилиты
+
+<a href="https://wiki.nura.eco/wiki/Installation/Using_pmbootstrap" target="_blank" rel="noopener">
+  <md-button variant="outlined">pmbootstrap</md-button>
+</a>
+<a href="https://github.com/bmax121/APatch" target="_blank" rel="noopener">
+  <md-button variant="outlined">APatch</md-button>
+</a>
